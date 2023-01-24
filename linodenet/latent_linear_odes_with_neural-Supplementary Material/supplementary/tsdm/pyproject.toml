@@ -1,0 +1,282 @@
+#[build-system]
+#requires = ["setuptools", "wheel"]
+#build-backend = "setuptools.build_meta"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+########################
+# Poetry Configuration #
+########################
+
+[tool.poetry]
+authors = ["Randolf Scholz <rscholz@ismll.de>"]
+description = "Time-Series Datasets and Models"
+documentation = "https://www.user.tu-berlin.de/randolf.scholz/tsdm"
+homepage = "https://git.tu-berlin.de/bvt-htbd/kiwi/tf1/tsdm"
+include = ["CHANGELOG.rst", "LICENSE.rst", "CONTRIBUTING.rst"]
+keywords = ["time series", "machine learning"]
+license = "MIT"
+name = "tsdm"
+packages = [{include = "tsdm", from="src"}]
+readme = "README.rst"
+repository = "https://git.tu-berlin.de/bvt-htbd/kiwi/tf1/tsdm"
+version = "0.3.3"
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: GPU :: NVIDIA CUDA :: 11.6",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+
+
+[tool.poetry.extras]
+# modin = ["modin"]
+# all = ["modin"]
+#modin = {version = ">=0.14", extras = ["ray"]}
+#ray = {version = ">=1.9", extras = ["default", "tune"]}
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+h5py = ">=3.7"
+matplotlib = ">=3.6"
+numpy = ">=1.23"
+pandas = ">=1.5"
+pillow = ">=9.2"
+pyarrow = ">=9.0"
+pyyaml = ">=6.0"
+scikit-learn = ">=1.1"
+scipy = ">=1.9"
+tables = ">=3.7"
+tensorboard = ">=2.10"
+torch = ">=1.12"
+tqdm = ">=4.64"
+typing-extensions = ">=4.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {version = ">=22.8", extras = ["jupyter"]}
+blacken-docs = ">=1.12"
+docutils = ">=0.19"
+flake8 = ">=5.0"
+flake8-annotations = ">=2.9"
+flake8-black = ">=0.3"
+flake8-bugbear = ">=22.9"
+flake8-comprehensions = ">=3.10"
+flake8-docstrings = ">=1.6"
+flake8-pyi = ">=22.8"
+flake8-rst = ">=0.8"
+flake8-rst-docstrings = ">=0.2"
+isort = ">=5.10"
+jupyter = ">=1.0.0"
+jupyterlab = ">=3.4"
+mypy = ">=0.981"
+nbsphinx = ">=0.8"
+piccolo-theme = ">=0.12.0"
+pre-commit = ">=2.20"
+pyall = ">=0.2.0"
+pybadges = ">=3.0"
+pycodestyle = ">=2.9"
+pydata-sphinx-theme = ">=0.10"
+pydeps = ">=1.10"
+pydocstyle = ">=6.1"
+pylint = ">=2.15"
+pylint-gitlab = ">=1.1"
+pyre-check = ">=0.9"
+pyright = ">=1.1"
+pytest = ">=7.1"
+pytest-cov = ">=3.0"
+pytest-rerunfailures = ">=10.2"
+setuptools = ">=65.3"
+sphinx = ">=5.1"
+sphinx-autoapi = ">=1.9"
+sphinx-automodapi = ">=0.14"
+sphinx-copybutton = ">=0.5"
+sphinx-math-dollar = ">=1.2"
+tqdm = ">=4.64"
+twine = ">=4.0"
+types-docutils = ">=0.19"
+types-pillow = ">=9.2"
+types-protobuf = ">=3.20"
+types-pyyaml = ">=6.0"
+types-requests = ">=2.28"
+types-setuptools = ">=65.3"
+types-six = ">=1.16"
+types-typing-extensions = ">=3.7"
+wheel = ">=0.37"
+
+
+[tool.poetry.scripts]
+
+########################
+# PyLint Configuration #
+########################
+[tool.pylint]
+[tool.pylint."MESSAGES CONTROL"]
+enable= [
+    "useless-suppression",
+]
+disable= [
+    "C0103",  # invalid-name
+    "C0144",  # non-ascii-name
+    "R0801",  # similar lines
+    "R0902",  # too-many-instance-attributes
+    "R0903",  # too-few-public-methods
+    "R0914",  # too-many-locals
+    "R0915",  # too-many-statements
+    "W0221",  # arguments-differ
+    "W0511",  # (fixme) (todos)
+    "W1113",  # keyword-arg-before-vararg
+]
+
+[tool.pylint.REPORTS]
+# Set the output format. Available formats are text, parseable, colorized, json and
+# msvs (visual studio). You can also give a reporter class, e.g. mypackage.mymodule.MyReporterClass
+output-format="colorized"
+
+[tool.pylint.FORMAT]
+max-line-length=120
+
+[tool.pylint.TYPECHECK]
+# List of members which are set dynamically and missed by pylint inference system, and so shouldn't
+# trigger E1101 when accessed. Python regular expressions are accepted.
+generated-members=["numpy.*","torch.*"]
+
+
+######################
+# MyPy Configuration #
+######################
+[tool.mypy]
+allow_redefinition = false
+color_output = true
+error_summary = true
+files = ["src/", "tests/"]
+plugins = ["numpy.typing.mypy_plugin"]
+pretty = true
+python_version = "3.10"
+check_untyped_defs = true
+show_column_numbers = true
+show_error_codes = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_no_return = true
+warn_unreachable = true
+warn_unused_configs = true
+#warn_return_any = true
+#disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "h5py.*",
+    "matplotlib.*",
+    "modin.*",
+    "numba.*",
+    "pandas.*",
+    "pyarrow.*",
+    "scipy.*",
+    "sklearn.*",
+    "tqdm.*",
+]
+ignore_missing_imports = true
+
+
+#######################
+# isort Configuration #
+#######################
+[tool.isort]
+# isort profiles: black, django, pycharm, google, open_stack, plone, attrs, hug, wemake, appnexus
+# black-compatible: black, appnexus
+py_version=310
+profile="black"
+src_paths=["src/", "tests/"]
+# flake8-profiles: appnexus, cryptography, edited, google, pep8, pycharm, smarkets
+# black-compatible: black, appnexus
+
+#######################
+# black Configuration #
+#######################
+[tool.black]
+line-length = 88
+target-version = ['py310']
+color = true
+
+############################
+# pydocstyle Configuration #
+############################
+[tool.pydocstyle]
+convention = "numpy"
+#count = true
+add-ignore = [
+    "D105",    # Missing docstring in magic method
+]
+
+#########################
+# pyright Configuration #
+#########################
+[tool.pyright]
+root = ""
+venv = ".venv"
+venvPath = "."
+pythonVersion = "3.10"
+pythonPlatform = "Linux"
+stubPath = ""
+include = ["src/", "tests/"]
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.ipynb_checkpoints",
+]
+executionEnvironments = [
+    {root = "src/", pythonVersion = "3.10", pythonPlatform = "Linux", extraPaths = [""]}
+]
+# region Type Check Diagnostics Settings
+reportMissingImports = false
+reportMissingTypeStubs = false
+reportUnsupportedDunderAll = false
+reportPrivateImportUsage = false
+# endregion
+
+
+########################
+# PyTest Configuration #
+########################
+[tool.pytest]
+[tool.pytest.ini_options]
+testpaths = [ "tests/" ]
+reruns = "3"
+only_rerun = "AssertionError"
+cov = "tsdm"
+
+##########################
+# Coverage Configuration #
+##########################
+[tool.coverage]
+
+[tool.coverage.paths]
+source = [
+   "src/tsdm",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "@abstractmethod",
+    "@abc.abstractmethod",
+    "@overload",
+    "@typing.overload",
+    "@singledispatch",
+    "@singledispatchmethod",
+    "if typing.TYPE_CHECKING",
+]
+
+[tool.coverage.run]
+source = [
+    "tsdm/",
+    "tests/",
+]

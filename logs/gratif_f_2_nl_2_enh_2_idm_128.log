@@ -1,0 +1,282 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.8439205884933472 VAL: 0.6352146863937378 TEST : 0.40280881524086
+INFO:root:2
+Train: 0.44165584444999695 VAL: 0.25818365812301636 TEST : 0.36819902062416077
+INFO:root:3
+Train: 0.37120017409324646 VAL: 0.22884565591812134 TEST : 0.34658703207969666
+INFO:root:4
+Train: 0.4273151755332947 VAL: 0.3155408203601837 TEST : 0.4361039996147156
+INFO:root:5
+Train: 0.44652190804481506 VAL: 0.25583362579345703 TEST : 0.36978796124458313
+INFO:root:6
+Train: 0.4141382575035095 VAL: 0.24851718544960022 TEST : 0.35651129484176636
+INFO:root:7
+Train: 0.33982154726982117 VAL: 0.25617411732673645 TEST : 0.36630240082740784
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.9067322611808777 VAL: 0.3672296106815338 TEST : 0.36681246757507324
+INFO:root:2
+Train: 0.5305328369140625 VAL: 0.29848724603652954 TEST : 0.35436248779296875
+INFO:root:3
+Train: 0.43730536103248596 VAL: 0.253674179315567 TEST : 0.32877296209335327
+INFO:root:4
+Train: 0.36831068992614746 VAL: 0.2504522204399109 TEST : 0.3226633369922638
+INFO:root:5
+Train: 0.34956812858581543 VAL: 0.2857859134674072 TEST : 0.33876344561576843
+INFO:root:6
+Train: 0.373749315738678 VAL: 0.34262174367904663 TEST : 0.36054301261901855
+INFO:root:7
+Train: 0.30532214045524597 VAL: 0.29111242294311523 TEST : 0.3300047516822815
+INFO:root:8
+Train: 0.3023926019668579 VAL: 0.31690722703933716 TEST : 0.35244518518447876
+INFO:root:9
+Train: 0.3298311233520508 VAL: 0.24949146807193756 TEST : 0.31259727478027344
+INFO:root:10
+Train: 0.30823689699172974 VAL: 0.24069125950336456 TEST : 0.319586843252182
+INFO:root:11
+Train: 0.3053063452243805 VAL: 0.2897919714450836 TEST : 0.33937883377075195
+INFO:root:12
+Train: 0.29920628666877747 VAL: 0.2818281352519989 TEST : 0.33068710565567017
+INFO:root:13
+Train: 0.2965438961982727 VAL: 0.2828076183795929 TEST : 0.33446943759918213
+INFO:root:14
+Train: 0.2921292781829834 VAL: 0.3048456609249115 TEST : 0.3513219654560089
+INFO:root:15
+Train: 0.2911449074745178 VAL: 0.32859301567077637 TEST : 0.36163610219955444
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.7392183542251587 VAL: 0.35175621509552
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.7433226704597473 VAL: 0.3398400545120239
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.8006924986839294 VAL: 0.28444144129753113
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.8720812797546387 VAL: 0.7499691843986511
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.8480116128921509 VAL: 0.32406866550445557
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': 'cpu'}
+INFO:root:1
+Train: 0.6065486073493958 VAL: 0.34975266456604004
+INFO:root:2
+Train: 0.706783652305603 VAL: 0.2801496088504791
+INFO:root:3
+Train: 0.4125545918941498 VAL: 0.2535526156425476
+INFO:root:4
+Train: 0.363523930311203 VAL: 0.4573792815208435
+INFO:root:5
+Train: 0.4102320075035095 VAL: 0.2746581733226776
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.8209343552589417 VAL: 0.3195212185382843
+INFO:root:2
+Train: 0.3454330861568451 VAL: 0.2483453005552292
+INFO:root:3
+Train: 0.32992732524871826 VAL: 0.28456446528434753
+INFO:root:4
+Train: 0.3554191589355469 VAL: 0.2875635027885437
+INFO:root:5
+Train: 0.41479313373565674 VAL: 0.2575570344924927
+INFO:root:6
+Train: 0.3881526589393616 VAL: 0.28847670555114746
+INFO:root:7
+Train: 0.45365458726882935 VAL: 0.25723838806152344
+INFO:root:8
+Train: 0.39669913053512573 VAL: 0.27930277585983276
+INFO:root:9
+Train: 0.35067856311798096 VAL: 0.29953882098197937
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cpu')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=128, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=128, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=128, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.7938033938407898 VAL: 0.3996525704860687
+INFO:root:2
+Train: 0.4210427403450012 VAL: 0.3522305488586426
+INFO:root:3
+Train: 0.3801608383655548 VAL: 0.30265742540359497
+INFO:root:4
+Train: 0.3993605077266693 VAL: 0.25751495361328125
+INFO:root:5
+Train: 0.3289203643798828 VAL: 0.4476826786994934
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.661267101764679 VAL: nan
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.707431435585022 VAL: 0.834990918636322
+INFO:root:2
+Train: 0.5964233875274658 VAL: 0.7326539754867554
+INFO:root:3
+Train: 0.542940616607666 VAL: 0.7353741526603699
+INFO:root:4
+Train: 0.5286006927490234 VAL: 0.6954396963119507
+INFO:root:5
+Train: 0.5109747052192688 VAL: 0.6532647013664246
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=128, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.7487121224403381 VAL: 0.8677273392677307
+INFO:root:2
+Train: 0.6221333742141724 VAL: 0.7457336187362671
+INFO:root:3
+Train: 0.5506090521812439 VAL: 0.652826726436615
+INFO:root:4
+Train: 0.5217002630233765 VAL: 0.7004129886627197
+INFO:root:5
+Train: 0.5167019367218018 VAL: 0.617993175983429
+INFO:root:6
+Train: 0.5349005460739136 VAL: 0.6306113004684448
+INFO:root:7
+Train: 0.5083255171775818 VAL: 0.6935649514198303
+INFO:root:8
+Train: 0.5224665999412537 VAL: 0.6757515668869019
+INFO:root:9
+Train: 0.4995507597923279 VAL: 0.6604330539703369
+INFO:root:10
+Train: 0.4868554472923279 VAL: 0.6558936238288879
+INFO:root:11
+Train: 0.4781261682510376 VAL: 0.6629506945610046
+INFO:root:12
+Train: 0.477922648191452 VAL: 0.6150187849998474
+INFO:root:13
+Train: 0.4814346134662628 VAL: 0.5950832366943359
+INFO:root:14
+Train: 0.49362409114837646 VAL: 0.739040732383728
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='mimiciv')
+INFO:root:{'input_dim': 100, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.3801172971725464 VAL: 0.3011777698993683
+INFO:root:2
+Train: 0.2859061360359192 VAL: 0.2742273807525635
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 36, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 37, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 37, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 37, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 37, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=128, dataset='physionet2012')
+INFO:root:{'input_dim': 37, 'attn_head': 2, 'latent_dim': 128, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.37302422523498535 VAL: 0.3015648126602173
+INFO:root:2
+Train: 0.30477848649024963 VAL: 0.29238730669021606

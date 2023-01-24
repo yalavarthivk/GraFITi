@@ -1,0 +1,11 @@
+[virtualenvs]
+create = true
+in-project = true
+path = ".venv/"
+
+[repositories]
+[repositories.berlin]
+url = "https://git.tu-berlin.de/api/v4/projects/6694/packages/pypi"
+
+[repositories.hildesheim]
+url = "https://software.ismll.uni-hildesheim.de/api/v4/projects/342/packages/pypi"

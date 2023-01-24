@@ -1,0 +1,2 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=200, fold=0, batch_size=128, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=1, attn_head=1, latent_dim=256, dataset='ushcn')
+INFO:root:{'input_dim': 5, 'attn_head': 1, 'latent_dim': 256, 'n_layers': 1, 'device': 'cpu'}

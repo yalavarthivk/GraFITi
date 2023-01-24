@@ -1,0 +1,2 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=200, fold=3, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=4, attn_head=4, latent_dim=256, dataset='mimiciv')
+INFO:root:{'input_dim': 100, 'attn_head': 4, 'latent_dim': 256, 'n_layers': 4, 'device': device(type='cuda')}

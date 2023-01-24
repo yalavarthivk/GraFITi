@@ -1,0 +1,70 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=200, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=4, attn_head=4, latent_dim=256, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 4, 'latent_dim': 256, 'n_layers': 4, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.7423352599143982 VAL: 0.550527036190033
+INFO:root:2
+Train: 0.47307226061820984 VAL: 0.5353430509567261
+INFO:root:3
+Train: 0.44234225153923035 VAL: 0.5016266107559204
+INFO:root:4
+Train: 167238448.0 VAL: 2805351.75
+INFO:root:5
+Train: 385262.40625 VAL: 44784.078125
+INFO:root:6
+Train: 48538.9765625 VAL: 21682.365234375
+INFO:root:7
+Train: 29521.11328125 VAL: 92687.96875
+INFO:root:8
+Train: 17798.861328125 VAL: 18283.2421875
+INFO:root:9
+Train: 25264.19921875 VAL: 18183.298828125
+INFO:root:10
+Train: 40293.93359375 VAL: 26874.93359375
+INFO:root:11
+Train: 16111.583984375 VAL: 10158.953125
+INFO:root:12
+Train: 13737203712.0 VAL: 94875942912.0
+INFO:root:13
+Train: 278925639680.0 VAL: 46211164.0
+INFO:root:14
+Train: 10472679014400.0 VAL: 10507017781248.0
+INFO:root:15
+Train: 2874024073887744.0 VAL: 635912716288.0
+INFO:root:16
+Train: 2287175991296.0 VAL: 1444767334400.0
+INFO:root:17
+Train: 215279833448448.0 VAL: 3464459452416.0
+INFO:root:18
+Train: 3468846432256.0 VAL: 2707082706944.0
+INFO:root:19
+Train: 22455865311232.0 VAL: 3290952630272.0
+INFO:root:20
+Train: 2354179473408.0 VAL: 2257280040960.0
+INFO:root:21
+Train: 1539285057536.0 VAL: 985648463872.0
+INFO:root:22
+Train: 955134902272.0 VAL: 697936314368.0
+INFO:root:23
+Train: 761504595968.0 VAL: 604473262080.0
+INFO:root:24
+Train: 653642956800.0 VAL: 587738185728.0
+INFO:root:25
+Train: 653578797056.0 VAL: 624645505024.0
+INFO:root:26
+Train: 574258348032.0 VAL: 657479696384.0
+INFO:root:27
+Train: 543418908672.0 VAL: 411485863936.0
+INFO:root:28
+Train: 508695511040.0 VAL: 432186064896.0
+INFO:root:29
+Train: 409036488704.0 VAL: 325508333568.0
+INFO:root:30
+Train: 595753369600.0 VAL: 266919723008.0
+INFO:root:31
+Train: 349436870656.0 VAL: 639378653184.0
+INFO:root:32
+Train: 299897880576.0 VAL: 181921218560.0
+INFO:root:33
+Train: 262062178304.0 VAL: 182027255808.0
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=200, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=4, attn_head=4, latent_dim=256, dataset='mimiciv')
+INFO:root:{'input_dim': 100, 'attn_head': 4, 'latent_dim': 256, 'n_layers': 4, 'device': device(type='cuda')}

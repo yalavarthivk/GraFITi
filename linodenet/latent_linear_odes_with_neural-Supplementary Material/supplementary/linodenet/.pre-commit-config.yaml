@@ -1,0 +1,130 @@
+exclude: (\.idea/|\docs/_build/|\.git/|\.venv/)
+default_language_version:
+  python: python3.10
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    # https://pre-commit.com/hooks.html
+    rev: v4.3.0
+    hooks:
+      - id: check-added-large-files
+        description: "prevents giant files from being committed."
+      - id: check-ast
+        description: "simply checks whether the files parse as valid python."
+      - id: check-builtin-literals
+        description: "requires literal syntax when initializing empty or zero python builtin types."
+      - id: check-byte-order-marker
+        description: "forbids files which have a utf-8 byte-order marker."
+      - id: check-json
+        description: "checks json files for parseable syntax."
+      - id: check-executables-have-shebangs
+        description: "ensures that (non-binary) executables have a shebang."
+      - id: check-shebang-scripts-are-executable
+        description: "ensures that (non-binary) files with a shebang are executable."
+      - id: check-symlinks
+        description: "checks for symlinks which do not point to anything."
+      - id: check-toml
+        description: "checks toml files for parseable syntax."
+      - id: check-xml
+        description: "checks xml files for parseable syntax."
+      - id: check-yaml
+        description: "checks yaml files for parseable syntax."
+      - id: end-of-file-fixer
+        description: "ensures that a file is either empty, or ends with one newline."
+      - id: pretty-format-json
+        description: "sets a standard for formatting json files."
+      - id: requirements-txt-fixer
+        description: "sorts entries in requirements.txt"
+      - id: trailing-whitespace
+        description: "trims trailing whitespace.."
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: "v1.9.0"
+    hooks:
+      - id: python-check-blanket-noqa
+        description: "Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`"
+      - id: python-check-blanket-type-ignore
+        description: "Enforce that `type: ignore` annotations always occur with specific codes. Sample annotations: `# type: ignore`, `# type: ignore,W203`"
+      - id: python-no-eval
+        description: "Enforce that `eval` is not used."
+      - id: python-no-log-warn
+        description: "Enforce that `logging.warn` is not used."
+      - id: python-use-type-annotations
+        description: "Enforce that type annotations are used."
+      - id: rst-directive-colons
+        description: "Enforce that RST directives have colons."
+      - id: rst-inline-touching-normal
+        description: "Detect mistake of inline code touching normal text in rst"
+  # prettier
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v3.0.0-alpha.0" # Use the sha or tag you want to point at
+    hooks:
+      - id: prettier
+  # black
+  - repo: https://github.com/psf/black
+    rev: 22.8.0
+    hooks:
+      - id: black
+      - id: black-jupyter
+  # pydocstyle
+  - repo: https://github.com/PyCQA/pydocstyle
+    rev: 6.1.1
+    hooks:
+      - id: pydocstyle
+        files: (^src/|^tests/)
+        additional_dependencies:
+          - toml
+  # isort
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+  # flake8
+  - repo: https://github.com/pycqa/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        files: (^src/|^tests/)
+        additional_dependencies:
+          - flake8-annotations
+          - flake8-black
+          - flake8-bugbear
+          - flake8-comprehensions
+          - flake8-docstrings
+          - flake8-mutable
+          - flake8-nb
+          - flake8-pyi
+          - flake8-rst
+          - flake8-rst-docstrings
+  # flake8-nb
+  #- repo: https://github.com/s-weigand/flake8-nb
+  #  rev: v0.4.0
+  #  hooks:
+  #  - id: flake8-nb
+  #    files: (^examples/.*.ipynb$|^bugs/.*.ipynb$)
+  - repo: https://github.com/MarcoGorelli/absolufy-imports
+    rev: v0.3.1
+    hooks:
+      - id: absolufy-imports
+  # mypy
+  #-   repo: https://github.com/pre-commit/mirrors-mypy
+  #    rev: v0.941
+  #    hooks:
+  #    - id: mypy
+  #      files: (^src/|^tests/)
+  #      args:
+  #      -   --warn-unused-configs
+  #      -   --ignore-missing-imports
+  #      additional_dependencies:
+  #      -   numpy==1.21.5
+  #      -   types-all
+  - repo: local
+    hooks:
+      - id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        description: Clear output cells in Jupyter notebooks
+        files: 'dev/.*\.ipynb$'
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+#  - repo: github.com/asottile/blacken-docs
+#    id: blacken-docs
+#    description: " Run `black` on python code blocks in documentation files "

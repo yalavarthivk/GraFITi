@@ -1,0 +1,4 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=64, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 64, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=30, fold=2, batch_size=32, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=2, latent_dim=64, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 2, 'latent_dim': 64, 'n_layers': 2, 'device': device(type='cuda')}

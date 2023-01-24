@@ -1,0 +1,20 @@
+INFO:root:Namespace(quiet=False, run_id=None, config=None, epochs=200, fold=2, batch_size=64, learn_rate=0.001, betas=(0.9, 0.999), weight_decay=0.001, hidden_size=32, kernel_init='skew-symmetric', note='', seed=None, nlayers=2, attn_head=4, latent_dim=32, dataset='mimiciii')
+INFO:root:{'input_dim': 96, 'attn_head': 4, 'latent_dim': 32, 'n_layers': 2, 'device': device(type='cuda')}
+INFO:root:1
+Train: 0.7036740183830261 VAL: 0.8262355327606201
+INFO:root:2
+Train: 0.6215237975120544 VAL: 0.7992407083511353
+INFO:root:3
+Train: 0.5926900506019592 VAL: 0.7692798376083374
+INFO:root:4
+Train: 0.5774242877960205 VAL: 0.7142113447189331
+INFO:root:5
+Train: 0.5545966029167175 VAL: 0.7226243019104004
+INFO:root:6
+Train: 0.5370247960090637 VAL: 0.6492712497711182
+INFO:root:7
+Train: 0.5184320211410522 VAL: 0.6494070291519165
+INFO:root:8
+Train: 0.5065444707870483 VAL: 0.6659343838691711
+INFO:root:9
+Train: 0.5042026042938232 VAL: 0.708734393119812

@@ -1,0 +1,362 @@
+#
+# https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates/Python.gitlab-ci.yml
+#
+
+image: python:3.10-bullseye
+
+stages:
+  - build
+  - analysis
+  - test
+  - deploy
+
+default:
+  tags:
+    - docker
+
+variables:
+  PYTHON_VERSION: "3.10"
+  MODULEDIR: "src/linodenet/"
+  MODULENAME: "linodenet"
+  TESTDIR: "tests/"
+  MAIN_CACHE: "$CI_PROJECT_DIR/.cache"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  MYPY_CACHE_DIR: "${CI_PROJECT_DIR}/.mypy_cache"
+  PYTEST_CACHE_DIR: "${CI_PROJECT_DIR}/.pytest_cache"
+  VENVNAME: ".venv"
+  VENV_DIR: "${CI_PROJECT_DIR}/${VENVNAME}"
+  TWINE_PASSWORD: "${CI_JOB_TOKEN}"
+  TWINE_USERNAME: "gitlab-ci-token"
+  TWINE_REPOSITORY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi"
+
+# global before_script is run before each and every job.
+before_script:
+  - mkdir -p $MAIN_CACHE public reports badges
+  - source ${VENVNAME}/bin/activate
+
+################
+# STAGE: SETUP #
+################
+
+setup:
+  stage: build
+  cache:
+    - key: package_cache
+      paths:
+        - "$MAIN_CACHE"
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: push
+  before_script:
+    - mkdir -p $MAIN_CACHE public reports badges
+    - echo "${CI_RUNNER_ID}"
+    - echo "${CI_RUNNER_TAGS}"
+    - du -h --max-depth=1 "${CI_PROJECT_DIR}/.cache"
+    # Check kernel and python version
+    - uname -a
+    - python -V
+    # overrides global before_script
+    # make directories
+    - mkdir -p badges
+    - mkdir -p reports
+    # python setup
+    - pip install --upgrade pip poetry virtualenv
+    - virtualenv ${VENVNAME} --download
+    - source ${VENVNAME}/bin/activate
+    - pip install --upgrade pip setuptools wheel
+    # install development dependencies
+    - poetry config http-basic.berlin gitlab-ci-token "${CI_JOB_TOKEN}"
+    - poetry config http-basic.hildesheim gitlab-ci-token "${CI_JOB_TOKEN}"
+    - |
+      if [[ $CI_PROJECT_URL == *"git.tu-berlin.de"* ]]; then
+        echo "Installing TSDM from Berlin Mirror."
+        mirror=$(echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@git.tu-berlin.de/api/v4/projects/6694/packages/pypi/simple")
+      elif [[ $CI_PROJECT_URL == *"software.ismll.uni-hildesheim.de"* ]]; then
+        echo "Installing TSDM from Hildesheim Mirror."
+        mirror=$(echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@software.ismll.uni-hildesheim.de/api/v4/projects/342/packages/pypi/simple")
+      else
+        echo "Package TSDM mirror not found."
+        exit 1
+      fi
+    - pip install tsdm --upgrade --pre --no-deps --index-url $mirror
+    - poetry install --no-root
+  script:
+    # We first build the package and then install it. Finally, we install the dev dependencies.
+    # This makes sure that the package can be built and installed.
+    # build and install package
+    # set version number depending on CI_PIPELINE_ID
+    - pip list
+    - VERSION=$(poetry version -s)
+    - poetry version "$(poetry version -s).post${CI_PIPELINE_IID}"
+    # verify version number OK (cf. https://peps.python.org/pep-0440/#appendix-b-parsing-version-strings-with-regular-expressions)
+    - regex='r"^([1-9][0-9]*!)?(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*((a|b|rc)(0|[1-9][0-9]*))?(\.post(0|[1-9][0-9]*))?(\.dev(0|[1-9][0-9]*))?$"'
+    - version='"'$(poetry version -s)'"'
+    - python -c "import re; assert re.match($regex, $version)"
+    # update the requirements.txt files.
+    - ./run/generate_requirements.sh
+    # build the package.
+    - poetry build
+    # install package
+    #- poetry install
+    # TODO: fix pip install errors!!!
+    - pip install --prefer-binary --upgrade $(ls dist/*.whl)
+    # install dev dependencies.
+    # - pip install --prefer-binary --upgrade -r requirements-dev.txt
+    - pip list
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    # generate python version badge
+    - python -m pybadges
+      --left-text="python"
+      --right-text="$PYTHON_VERSION"
+      --whole-link="https://www.python.org/"
+      --logo="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"
+      --embed-logo
+      > badges/python.svggit
+    # generate package version badge
+    - python -m pybadges
+      --left-text="version"
+      --right-text=version
+      > badges/version.svg
+    # generate license badge
+    - python -m pybadges
+      --left-text="license"
+      --right-text="MIT"
+      --right-color="#7900CA"
+      > badges/license.svg
+  artifacts:
+    paths:
+      - dist/
+      - badges/
+
+###################
+# STAGE: ANALYSIS #
+###################
+
+pylint:
+  # see .pylintrc for configuration
+  stage: analysis
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: pull
+  needs:
+    - setup
+  script:
+    # generate reports
+    - pylint $MODULEDIR
+      --exit-zero
+      --load-plugins=pylint_gitlab
+      --output-format=gitlab-codeclimate
+      > reports/codeclimate.json
+    # colorized for human readability
+    - pylint $TESTDIR --exit-zero --output-format=colorized
+    - pylint $MODULEDIR --exit-zero --output-format=colorized | tee pylint.log
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - SCORE=$(sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint.log)
+    - |
+      COLOR=$(python -c "print({0: 'black', 2:'red', 4:'orange', 6:'yellow', 8:'green'}[int($SCORE-$SCORE%2)])")
+    # generate pylint badge
+    - python -m pybadges
+      --left-text="PyLint"
+      --right-text="$SCORE"
+      --right-color=$COLOR
+      --whole-link="https://github.com/PyCQA/pylint"
+      --logo="https://raw.githubusercontent.com/PyCQA/pylint/69404bbf1a513381fd90e8f0c777d64b7923e429/doc/logo.svg"
+      --embed-logo
+      > badges/pylint.svg
+  artifacts:
+    # reports:
+    # codequality: reports/codeclimate.json
+    paths:
+      - badges/
+
+flake8:
+  # see .flake8 for configuration
+  stage: analysis
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: pull
+  needs:
+    - setup
+  script:
+    - flake8 $MODULEDIR
+    - flake8 $TESTDIR
+    - isort $MODULEDIR --check-only --diff
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - COLOR=$([ "$CI_JOB_STATUS" == "success" ] && echo "green" || echo "red")
+    - TEXT=$([ "$CI_JOB_STATUS" == "success" ] && echo "passing" || echo "failed")
+    # generate flake8 badge
+    - python -m pybadges
+      --left-text="flake8"
+      --right-text="$TEXT"
+      --right-color="$COLOR"
+      --whole-link="https://flake8.pycqa.org/en/latest/"
+      > badges/flake8.svg
+    # generate black code style badge
+    - python -m pybadges
+      --left-text="code style"
+      --right-text="black"
+      --right-color="black"
+      --whole-link="https://github.com/psf/black"
+      > badges/black.svg
+  artifacts:
+    paths:
+      - badges/
+
+mypy:
+  # see pyproject.toml for configuration
+  stage: analysis
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+    - key: mypy
+      paths:
+        - "$MYPY_CACHE_DIR"
+  needs:
+    - setup
+  allow_failure: true
+  script:
+    - mypy $MODULEDIR --show-error-codes --pretty --junit-xml reports/mypy.xml
+    - mypy $TESTDIR --show-error-codes --pretty --junit-xml reports/mypy_test.xml
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - COLOR=$([ "$CI_JOB_STATUS" == "success" ] && echo "green" || echo "red")
+    - TEXT=$([ "$CI_JOB_STATUS" == "success" ] && echo "passing" || echo "failed")
+    # generate mypy badge
+    - python -m pybadges
+      --left-text="MyPy"
+      --right-text="$TEXT"
+      --right-color="$COLOR"
+      --whole-link="https://github.com/python/mypy"
+      > badges/mypy.svg
+  # --logo="http://mypy-lang.org/static/mypy_light.svg"
+  # --embed-logo
+  artifacts:
+    reports:
+      junit: reports/mypy*.xml
+    paths:
+      - badges/
+
+###############
+# STAGE: TEST #
+###############
+
+pytest:
+  # see pytest.ini for configuration
+  stage: test
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: pull
+    - key: pytest
+      paths:
+        - "$PYTEST_CACHE_DIR"
+  needs:
+    - setup
+  script:
+    - pytest --junitxml=reports/pytest.xml --cov=$MODULENAME $TESTDIR --reruns 3 --only-rerun AssertionError
+    - coverage xml -o reports/cobertura-coverage.xml
+    - coverage report
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - COLOR=$([ "$CI_JOB_STATUS" == "success" ] && echo "green" || echo "red")
+    - TEXT=$([ "$CI_JOB_STATUS" == "success" ] && echo "passing" || echo "failed")
+    # generate pytest badge
+    - python -m pybadges
+      --left-text="pytest"
+      --right-text="$TEXT"
+      --right-color="$COLOR"
+      --whole-link="https://pytest.org"
+      > badges/pytest.svg
+  # --logo="https://raw.githubusercontent.com/pytest-dev/pytest/main/doc/en/img/pytest_logo_curves.svg"
+  # --embed-logo
+  coverage: '/TOTAL.*\s+(\d+\%)/'
+  artifacts:
+    # https://software.ismll.uni-hildesheim.de/help/ci/unit_test_reports
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: reports/cobertura-coverage.xml
+      junit: reports/pytest.xml
+    paths:
+      - badges/
+
+#################
+# STAGE: DEPLOY #
+#################
+
+pypi:
+  # https://docs.gitlab.com/ee/user/packages/pypi_repository/
+  stage: deploy
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: pull
+  needs:
+    - setup
+    - pytest
+  only:
+    - main
+  script:
+    - twine upload --verbose  dist/*
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - COLOR=$([ "$CI_JOB_STATUS" == "success" ] && echo "green" || echo "red")
+    - TEXT=$([ "$CI_JOB_STATUS" == "success" ] && echo "passing" || echo "failed")
+    # generate pypi badge
+    - python -m pybadges
+      --left-text="PyPI"
+      --right-text="$TEXT"
+      --right-color="$COLOR"
+      --whole-link="https://pypi.org/"
+      --logo="https://pypi.org/static/images/logo-small.95de8436.svg"
+      --embed-logo
+      > badges/pypi.svg
+  artifacts:
+    paths:
+      - badges/
+
+pages:
+  # https://docs.gitlab.com/ee/user/packages/pypi_repository/
+  stage: deploy
+  cache:
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: pull
+  needs:
+    - setup
+    - pytest
+  only:
+    - main
+  script:
+    - cd docs
+    - make html
+    - cp -r  _build/html/* ../public/
+  after_script:
+    - source ${VENVNAME}/bin/activate
+    - COLOR=$([ "$CI_JOB_STATUS" == "success" ] && echo "green" || echo "red")
+    - TEXT=$([ "$CI_JOB_STATUS" == "success" ] && echo "passing" || echo "failed")
+    # generate sphinx badge
+    - python -m pybadges
+      --left-text="docs"
+      --right-text="$TEXT"
+      --right-color="$COLOR"
+      --whole-link="https://www.sphinx-doc.org"
+      --logo="https://raw.githubusercontent.com/sphinx-doc/sphinx/9e1b4a8f1678e26670d34765e74edf3a3be3c62c/doc/_static/favicon.svg"
+      --embed-logo
+      > badges/sphinx.svg
+  artifacts:
+    paths:
+      - public/
+      - badges/
