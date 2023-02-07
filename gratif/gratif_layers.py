@@ -204,7 +204,7 @@ class Encoder(nn.Module):
 
 			# updating only channel nodes
 
-			C_ = self.channel_attn[i](C__, C__)
+			C_ = C__
 			T_ = T__
 
 		k_t = self.gather(T_, T_inds_)
