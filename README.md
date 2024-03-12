@@ -14,7 +14,7 @@ numpy                     1.19.3
 
 # Training and Evaluation
 
-We provide an example for ``physionet``. All the datasets can be run in the similar manner.
+We provide an example for ``physionet`` for observing 36 hrs and predicting 12 hrs. All the datasets can be run in the similar manner.
 
 ```
 train_gratif.py --epochs 200 --learn-rate 0.001 --batch-size 128 --attn-head 1 --latent-dim 128 --nlayers 4 --dataset physionet2012 --fold 0 -ct 36 -ft 12
