@@ -67,7 +67,7 @@ from tsdm import (
 
 # pylint: enable=wrong-import-position
 
-__version__ = metadata.version(__package__)
+# __version__ = metadata.version(__package__)
 r"""The version number of the `tsdm` package."""
 
 

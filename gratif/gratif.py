@@ -90,12 +90,12 @@ def tsdm_collate(batch: list[Sample]) -> Batch:
         # target_y = torch.cat([target_vals, target_mask], dim=2)
 
     return Batch(
-        x_time=pad_sequence(context_x, batch_first=True).squeeze(),
-        x_vals=pad_sequence(context_vals, batch_first=True, padding_value=0).squeeze(),
-        x_mask=pad_sequence(context_mask, batch_first=True).squeeze(),
-        y_time=pad_sequence(context_x, batch_first=True).squeeze(),
-        y_vals=pad_sequence(target_vals, batch_first=True, padding_value=0).squeeze(),
-        y_mask=pad_sequence(target_mask, batch_first=True).squeeze(),
+        x_time=pad_sequence(context_x, batch_first=True),
+        x_vals=pad_sequence(context_vals, batch_first=True, padding_value=0),
+        x_mask=pad_sequence(context_mask, batch_first=True),
+        y_time=pad_sequence(context_x, batch_first=True),
+        y_vals=pad_sequence(target_vals, batch_first=True, padding_value=0),
+        y_mask=pad_sequence(target_mask, batch_first=True),
     )
 
 

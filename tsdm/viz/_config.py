@@ -13,7 +13,7 @@ from typing import Final
 
 import matplotlib
 
-USE_TEX: Final[bool] = matplotlib.checkdep_usetex(True)
+USE_TEX: Final[bool] = False
 r"""Whether to use LaTeX rendering."""
 
 
