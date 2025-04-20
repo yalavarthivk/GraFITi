@@ -1,0 +1,374 @@
+
+--boundary_.oOo._S+4BUtV42lAZYjDWSo2m8ybxmYgWKRiD
+Content-Length: 2280
+Content-Type: application/octet-stream
+X-File-MD5: c4628e92b43cbaecfbcac51bd936399a
+X-File-Mtime: 1741770243
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/.flake8
+
+[flake8]
+# ANN: Annotations
+# A:   builtins
+# B:   bugbear
+# B9:  bugbear future proof
+# BLK: black
+# C:   mccabe / comprehensions
+# D:   docstring
+# E:   pycodestyle errors
+# F:   pyflakes warnings
+# I:   import-order
+# M:   flake8 extension for mutable default arguments
+# RST: restructured text
+# W:   pycodestyle warnings
+# Y:   type hinting in stub files
+# select = B,B9,BLK,C,D,E,F,I,S,W
+
+;filename =
+;     No need to traverse our git directory
+;    "src/",
+;    # This contains builds of flake8 that we don't want to check
+;    "tests/",
+;    # There's no value in checking cache directories
+;    "examples/",
+;    # sphinx config
+;    "docs/conf.py",
+;    # run files
+;    "run/",
+;    # dev files
+;    "dev/",
+
+max-line-length = 120
+
+ignore =
+    E203,    # whitespace before ':'
+;    E221,  # multiple spaces before operator
+;    E226,  # missing whitespace around arithmetic operator
+;    E241,  # multiple spaces after ':'
+    W503,    # line break before binary operator
+    ANN101,  # Missing type annotation for self in method
+    ANN102,  # Missing type annotation for cls in classmethod
+    ANN401,  # Dynamically typed expressions (typing.Any) are disallowed
+    E741,    # ambiguous variable nam
+
+extend-ignore =
+    # Google Python style is not RST until after processed by Napoleon
+    # See https://github.com/peterjc/flake8-rst-docstrings/issues/17
+    RST201,     # Unexpected indentation.
+    RST203,     # Definition list ends without a blank line; unexpected unindent.
+    RST301,     # Block quote ends without a blank line; unexpected unindent.
+;    RST303,     # Unknown directive type
+;    RST304,     # Unknown interpreted text role
+;    ANN101,     # Missing type annotation for self in method
+;    ANN201,     # Missing return type annotation for public function
+    D407,       # Missing dashed underline after section
+
+exclude =
+    ./.git,
+    ./build,
+    ./scripts,
+    ./venv,
+    *.pyi,
+    ./dev,
+
+# Annotations plugin
+# Suppress ANN200-level errors for functions that have no return (return None)
+suppress-none-returning = True
+allow-untyped-defs = True
+
+# docstring plugin
+docstring-convention = numpy
+
+rst-roles =
+    mod,
+    func,
+    data,
+    const,
+    class,
+    meth,
+    attr,
+    exc,
+    obj,
+
+rst-directives=
+    Signature,
+
+--boundary_.oOo._S+4BUtV42lAZYjDWSo2m8ybxmYgWKRiD
+Content-Length: 2480
+Content-Type: application/octet-stream
+X-File-MD5: 53071680117ebe9f8284f01c8d31216c
+X-File-Mtime: 1741770243
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/.gitignore
+
+# pycharm
+# Default ignored files
+.idea/shelf/
+.idea/workspace.xml
+# Editor-based HTTP Client requests
+.idea/httpRequests/
+# Datasource local storage ignored files
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+# Ignore pickle files
+*.pickle
+
+# Pytorch profiling
+*.pt.trace.json
+
+# tensorboard files
+*events.out.tfevents*
+
+# Pickles
+*.pk
+
+# videos & images
+video/
+pics/
+
+# tensorboard run data
+runs/
+model_checkpoints/
+
+# model checkpoints
+checkpoints/
+*.pt
+
+# latex aux files
+__tex__/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+badges/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+reports/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+docs/_autosummary/
+docs/autoapi/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pytype type checker
+.pytype/
+
+# PyCharm
+# .idea/
+
+# VSCode
+.virtual_documents
+
+# dask
+dask-worker-space/
+
+# LibreOffice lock files
+.~lock.*
+
+--boundary_.oOo._S+4BUtV42lAZYjDWSo2m8ybxmYgWKRiD
+Content-Length: 10740
+Content-Type: application/octet-stream
+X-File-MD5: bd31ae19805bf2dfeb01e81e57b32330
+X-File-Mtime: 1741770243
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/.gitlab-ci.yml
+
+#
+# https://gitlab.com/gitlab-org/gitlab/-/tree/master/lib/gitlab/ci/templates/Python.gitlab-ci.yml
+#
+
+image: python:3.10-bullseye
+
+stages:
+  - build
+  - analysis
+  - test
+  - deploy
+
+default:
+  tags:
+    - docker
+
+variables:
+  PYTHON_VERSION: "3.10"
+  MODULEDIR: "src/linodenet/"
+  MODULENAME: "linodenet"
+  TESTDIR: "tests/"
+  MAIN_CACHE: "$CI_PROJECT_DIR/.cache"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  MYPY_CACHE_DIR: "${CI_PROJECT_DIR}/.mypy_cache"
+  PYTEST_CACHE_DIR: "${CI_PROJECT_DIR}/.pytest_cache"
+  VENVNAME: ".venv"
+  VENV_DIR: "${CI_PROJECT_DIR}/${VENVNAME}"
+  TWINE_PASSWORD: "${CI_JOB_TOKEN}"
+  TWINE_USERNAME: "gitlab-ci-token"
+  TWINE_REPOSITORY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi"
+
+# global before_script is run before each and every job.
+before_script:
+  - mkdir -p $MAIN_CACHE public reports badges
+  - source ${VENVNAME}/bin/activate
+
+################
+# STAGE: SETUP #
+################
+
+setup:
+  stage: build
+  cache:
+    - key: package_cache
+      paths:
+        - "$MAIN_CACHE"
+    - key: venv
+      paths:
+        - "$VENV_DIR"
+      policy: push
+  before_script:
+    - mkdir -p $MAIN_CACHE public reports badges
+    - echo "${CI_RUNNER_ID}"
+    - echo "${CI_RUNNER_TAGS}"
+    - du -h --max-depth=1 "${CI_PROJECT_DIR}/.cache"
+    # Check kernel and python version
+    - uname -a
+    - python -V
+    # overrides global before_script
+    # make directories
+    - mkdir -p badges
+    - mkdir -p reports
+    # python setup
+    - pip install --upgrade pip poetry virtualenv
+    - virtualenv ${VENVNAME} --download
+    - source ${VENVNAME}/bin/activate
+    - pip install --upgrade pip setuptools wheel
+    # install development dependencies
+    - poetry config http-basic.berlin gitlab-ci-token "${CI_JOB_TOKEN}"
+    - poetry config http-basic.hildesheim gitlab-ci-token "${CI_JOB_TOKEN}"
+    - |
+      if [[ $CI_PROJECT_URL == *"git.tu-berlin.de"* ]]; then
+        echo "Installing TSDM from Berlin Mirror."
+        mirror=$(echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@git.tu-berlin.de/api/v4/projects/6694/packages/pypi/simple")
+      elif [[ $CI_PROJECT_URL == *"software.ismll.uni-hildesheim.de"* ]]; then
+        echo "Installing TSDM from Hildesheim Mirror."
+        mirror=$(echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@software.ismll.uni-hildesheim.de/api/v4/projects/342/packages/pypi/simple")
+      else
+        echo "Package TSDM mirror not found."
+  

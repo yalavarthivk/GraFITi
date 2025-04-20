@@ -1,0 +1,239 @@
+
+--boundary_.oOo._QnsIHgHJ1slXd9pKjeqB9nYTYL9WyOUv
+Content-Length: 4231
+Content-Type: application/octet-stream
+X-File-MD5: 06dc5f9007e3b9997b2c1e55b21a64d2
+X-File-Mtime: 1741770244
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/src/linodenet/__init__.py
+
+r"""Linear Ordinary Differential Equation Recurrent Neural Network."""
+
+__all__ = [
+    # Constants
+    "__version__",
+    "conf",
+    # Sub-Modules
+    "config",
+    "initializations",
+    "models",
+    "projections",
+    "regularizations",
+    "utils",
+]
+
+import logging
+import sys
+from importlib import metadata
+from types import ModuleType
+
+# version check
+if sys.version_info < (3, 10):
+    raise RuntimeError("Python >= 3.10 required")
+
+# pylint: disable=wrong-import-position
+
+from linodenet import (
+    config,
+    initializations,
+    models,
+    projections,
+    regularizations,
+    utils,
+)
+from linodenet.config import conf
+
+# pylint: enable=wrong-import-position
+
+
+__logger__ = logging.getLogger(__name__)
+__version__ = metadata.version(__package__)
+r"""The version number of the `linodenet` package."""
+
+
+# Recursively clean up namespaces to only show what the user should see.
+def _clean_namespace(module: ModuleType) -> None:
+    r"""Recursively cleans up the namespace.
+
+    Sets `obj.__module__` equal to `obj.__package__` for all objects listed in
+    `package.__all__` that are originating from private submodules (`package/_module.py`).
+
+    Parameters
+    ----------
+    module: ModuleType
+    """
+    __logger__.info("Cleaning module=%s", module)
+    variables = vars(module)
+
+    def is_private(s: str) -> bool:
+        return s.startswith("_") and not s.startswith("__")
+
+    def get_module(obj_ref: object) -> str:
+        return obj_ref.__module__.rsplit(".", maxsplit=1)[-1]
+
+    assert hasattr(module, "__name__"), f"{module=} has no __name__ ?!?!"
+    assert hasattr(module, "__package__"), f"{module=} has no __package__ ?!?!"
+    assert hasattr(module, "__all__"), f"{module=} has no __all__!"
+    assert module.__name__ == module.__package__, f"{module=} is not a package!"
+
+    maxlen = max((len(key) for key in variables))
+
+    def _format(key: str) -> str:
+        return key.ljust(maxlen)
+
+    for key in list(variables):
+        key_repr = _format(key)
+        obj = variables[key]
+        # ignore _clean_namespace and ModuleType
+        if key in ("ModuleType", "_clean_namespace"):
+            __logger__.debug("key=%s  skipped! - protected object!", key_repr)
+            continue
+        # ignore dunder keys
+        if key.startswith("__") and key.endswith("__"):
+            __logger__.debug("key=%s  skipped! - dunder object!", key_repr)
+            continue
+        # special treatment for ModuleTypes
+        if isinstance(obj, ModuleType):
+            if obj.__package__ is None:
+                __logger__.debug(
+                    "key=%s  skipped! Module with no __package__!", key_repr
+                )
+                continue
+            # subpackage!
+            if obj.__package__.rsplit(".", maxsplit=1)[0] == module.__name__:
+                __logger__.debug("key=%s  recursion!", key_repr)
+                _clean_namespace(obj)
+            # submodule!
+            elif obj.__package__ == module.__name__:
+                __logger__.debug("key=%s  skipped! Sub-Module!", key_repr)
+                continue
+            # 3rd party!
+            else:
+                __logger__.debug("key=%s  skipped! 3rd party Module!", key_repr)
+                continue
+        # key is found:
+        if key in module.__all__:
+            # set __module__ attribute to __package__ for functions/classes
+            # originating from private modules.
+            if isinstance(obj, type) or callable(obj):
+                mod = get_module(obj)
+                if is_private(mod):
+                    __logger__.debug(
+                        "key=%s  changed {obj.__module__=} to {module.__package__}!",
+                        key_repr,
+                    )
+                    obj.__module__ = str(module.__package__)
+        else:
+            # kill the object
+            delattr(module, key)
+            __logger__.debug("key=%s  killed!", key_repr)
+    # Post Loop - clean up the rest
+    for key in ("ModuleType", "_clean_namespace"):
+        if key in variables:
+            key_repr = _format(key)
+            delattr(module, key)
+            __logger__.debug("key=%s  killed!", key_repr)
+
+
+# recursively clean namespace from self.
+_clean_namespace(__import__(__name__))
+
+--boundary_.oOo._QnsIHgHJ1slXd9pKjeqB9nYTYL9WyOUv
+Content-Length: 32
+Content-Type: application/octet-stream
+X-File-MD5: a4765a0971d52f282a668cf3d062f569
+X-File-Mtime: 1741770244
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/docs/_templates/_autoapi_templates/python/attribute.rst
+
+{% extends "python/data.rst" %}
+
+--boundary_.oOo._QnsIHgHJ1slXd9pKjeqB9nYTYL9WyOUv
+Content-Length: 768
+Content-Type: application/octet-stream
+X-File-MD5: 417f665059637913380f180523ef034c
+X-File-Mtime: 1741770244
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/docs/_templates/_autoapi_templates/python/data.rst
+
+{% if obj.display %}
+.. py:{{ obj.type }}:: {{ obj.name }}
+   {%+ if obj.value is not none or obj.annotation is not none -%}
+   :annotation:
+        {%- if obj.annotation %} :{{ obj.annotation }}
+        {%- endif %}
+        {%- if obj.value is not none %} = {%
+            if obj.value is string and obj.value.splitlines()|count > 1 -%}
+                Multiline-String
+
+    .. raw:: html
+
+        <details><summary>Show Value</summary>
+
+    .. code-block:: text
+        :linenos:
+
+        {{ obj.value|indent(width=8) }}
+
+    .. raw:: html
+
+        </details>
+
+            {%- else -%}
+                {{ obj.value|string|truncate(100) }}
+            {%- endif %}
+        {%- endif %}
+    {% endif %}
+
+
+   {{ obj.docstring|prepare_docstring|indent(3) }}
+{% endif %}
+
+--boundary_.oOo._QnsIHgHJ1slXd9pKjeqB9nYTYL9WyOUv
+Content-Length: 597
+Content-Type: application/octet-stream
+X-File-MD5: e0dffce4d7d0b73451963275ec6eef6d
+X-File-Mtime: 1741770244
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/docs/_templates/_autoapi_templates/python/function.rst
+
+{% if obj.display %}
+.. py:function:: {{ obj.short_name }}({{ obj.args }}){% if obj.return_annotation is not none %} -> {{ obj.return_annotation }}{% endif %}
+
+{% for (args, return_annotation) in obj.overloads %}
+              {{ obj.short_name }}({{ args }}){% if return_annotation is not none %} -> {{ return_annotation }}{% endif %}
+
+{% endfor %}
+   {% if sphinx_version >= (2, 1) %}
+   {% for property in obj.properties %}
+   :{{ property }}:
+   {% endfor %}
+   {% endif %}
+
+   {% if obj.docstring %}
+   {{ obj.docstring|prepare_docstring|indent(3) }}
+   {% else %}
+   {% endif %}
+{% endif %}
+
+--boundary_.oOo._QnsIHgHJ1slXd9pKjeqB9nYTYL9WyOUv
+Content-Length: 1878
+Content-Type: application/octet-stream
+X-File-MD5: fae98acc277af1803440aa93727f3362
+X-File-Mtime: 1741770244
+X-File-Path: /vijaya_research/git_codes/GraFITi/linodenet/latent_linear_odes_with_neural-Supplementary Material/supplementary/linodenet/docs/_templates/_autoapi_templates/python/class.rst
+
+{% if obj.display %}
+.. py:{{ obj.type }}:: {{ obj.short_name }}{% if obj.args %}({{ obj.args }}){% endif %}
+{% for (args, return_annotation) in obj.overloads %}
+   {{ " " * (obj.type | length) }}   {{ obj.short_name }}{% if args %}({{ args }}){% endif %}
+{% endfor %}
+
+
+   {% if obj.bases %}
+   {% if "show-inheritance" in autoapi_options %}
+   Bases: {% for base in obj.bases %}{{ base|link_objs }}{% if not loop.last %}, {% endif %}{% endfor %}
+   {% endif %}
+
+
+   {% if "show-inheritance-diagram" in autoapi_options and obj.bases != ["object"] %}
+   .. autoapi-inheritance-diagram:: {{ obj.obj["full_name"] }}
+      :parts: 1
+      {% if "private-members" in autoapi_options %}
+      :private-b
