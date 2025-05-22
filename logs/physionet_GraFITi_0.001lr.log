@@ -1,0 +1,24 @@
+/home/kloetergens/projects/GraFITi/zhang_experiments.py
+2025-05-22 17:24:08
+zhang_experiments.py
+Namespace(state='def', n=100000000, hop=1, nhead=1, tf_layer=1, nlayer=1, epoch=1000, patience=10, history=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, save='experiments/', load=None, seed=1, dataset='physionet', quantization=0.0, model='GraFITi', hidden_size=32, kernel_init='skew-symmetric', note='', nlayers=2, attn_head=2, latent_dim=128, gpu='0', device=device(type='cuda'), PID=82136, ndim=41)
+- Epoch 000, ExpID 66814
+Train - Loss (one batch): 0.00633
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00707, 0.00707, 0.08411, 0.05218, 386.50%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 0, 0.00757, 0.00757, 0.08698, 0.05291, 430.29%
+Time spent: 9.88s
+- Epoch 001, ExpID 66814
+Train - Loss (one batch): 0.00475
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00593, 0.00593, 0.07702, 0.04334, 231.83%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00644, 0.00644, 0.08026, 0.04450, 254.59%
+Time spent: 9.52s
+- Epoch 002, ExpID 66814
+Train - Loss (one batch): 0.00877
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00556, 0.00556, 0.07453, 0.04649, 311.34%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 2, 0.00591, 0.00591, 0.07690, 0.04668, 330.94%
+Time spent: 9.61s
+- Epoch 003, ExpID 66814
+Train - Loss (one batch): 0.00538
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00506, 0.00506, 0.07113, 0.03908, 190.31%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 3, 0.00545, 0.00545, 0.07386, 0.03951, 211.46%
+Time spent: 9.54s

@@ -1,12 +1,14 @@
+import pdb
+from typing import NamedTuple
+
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
-from typing import NamedTuple
-from grafiti import grafiti_layers
 from torch.nn.utils.rnn import pad_sequence
-import pdb
+
+from grafiti import grafiti_layers, grafiti_utils
 
 
 class Batch(NamedTuple):
@@ -113,3 +115,15 @@ class GraFITi(nn.Module):
     def forward(self, x_time, x_vals, x_mask, y_mask):
         yhat = self.grafiti_(x_time, x_vals, x_mask, y_mask)
         return yhat
+
+    def forecasting_with_targets(self, batch_dict):
+        x_time, x_vals, x_mask, y_time, y_vals, y_mask = (
+            grafiti_utils.transform_data_for_grafiti(batch_dict, device=self.device)
+        )
+        yhat = self.forward(
+            x_time=x_time,
+            x_vals=x_vals,
+            x_mask=x_mask,
+            y_mask=y_mask,
+        )
+        return yhat, y_vals, y_mask
